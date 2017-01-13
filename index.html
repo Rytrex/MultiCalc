@@ -1,5 +1,3 @@
----
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +9,38 @@
 </head>
 <body>
 
-{% include display.html %}
-{% include buttons.html %}
+<div class="display">
+  <!--Displays the last entered equation-->
+  <div id="prev-entry">
+  </div>
+  <!--Displays the current entered equation-->
+  <div id="current-entry">
+  </div>
+</div>
+
+<div class="buttons">
+  <!--Input buttons for the calculator-->
+  <button onclick="add(1)">1</button>
+  <button onclick="add(2)">2</button>
+  <button onclick="add(3)">3</button>
+  <button onclick="add('+')">+</button>
+  <br>
+  <button onclick="add(4)">4</button>
+  <button onclick="add(5)">5</button>
+  <button onclick="add(6)">6</button>
+  <button onclick="add('-')">−</button>
+  <br>
+  <button onclick="add(7)">7</button>
+  <button onclick="add(8)">8</button>
+  <button onclick="add(9)">9</button>
+  <button onclick="add('*')">x</button>
+  <br>
+  <button onclick="clr()">C</button>
+  <button onclick="add(0)">0</button>
+  <button onclick="calculate()">=</button>
+  <button onclick="add('/')">÷</button>
+</div>
+
 
 <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
