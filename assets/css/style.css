@@ -30,6 +30,6 @@ body {
     height: auto;
     text-align: center; }
   .display #current-entry {
-    height: 30px;
+    min-height: 30px;
     border: 0.5px solid black;
     text-align: center; }
