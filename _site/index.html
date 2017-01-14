@@ -20,6 +20,11 @@
 
 <div class="buttons">
   <!--Input buttons for the calculator-->
+  <button onclick="clr()">C</button>
+  <button onclick="add('(')">(</button>
+  <button onclick="add(')')">)</button>
+  <button onclick="pop()"><</button>
+  <br>
   <button onclick="add(1)">1</button>
   <button onclick="add(2)">2</button>
   <button onclick="add(3)">3</button>
@@ -35,8 +40,8 @@
   <button onclick="add(9)">9</button>
   <button onclick="add('*')">x</button>
   <br>
-  <button onclick="clr()">C</button>
   <button onclick="add(0)">0</button>
+  <button onclick="add('.')">.</button>
   <button onclick="calculate()">=</button>
   <button onclick="add('/')">÷</button>
 </div>
