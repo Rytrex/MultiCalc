@@ -3,6 +3,8 @@
   <div id="prev-entry">
   </div>
   <!--Displays the current entered equation-->
-  <div id="current-entry">
-  </div>
+  <form method="POST" action="/">
+    <input type="text" id="current-entry" name="equation"></input>
+    {% include buttons.html %}
+  </form>
 </div>

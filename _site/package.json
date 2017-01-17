@@ -1,0 +1,24 @@
+{
+  "name": "multicalc",
+  "version": "1.0.0",
+  "description": "placeholder",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rytrex/MultiCalc.git"
+  },
+  "author": "Don Vo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rytrex/MultiCalc/issues"
+  },
+  "homepage": "https://github.com/Rytrex/MultiCalc#readme"
+}

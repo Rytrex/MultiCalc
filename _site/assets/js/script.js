@@ -1,5 +1,6 @@
 var currentEquation = "" //Holds the current equation
 var previousEquations = [] //Holds the last 10 equation entries
+var jsonData
 var currentEntry = document.getElementById("current-entry") //Pointer to current-entry on HTML
 var previousEntries = document.getElementById("prev-entry") //Pointer to prev-entry on HTML
 
@@ -7,7 +8,7 @@ var previousEntries = document.getElementById("prev-entry") //Pointer to prev-en
 function add(input) {
   currentEquation += input
   console.log("Added " + input)
-  currentEntry.innerHTML = currentEquation
+  currentEntry.value = currentEquation
 }
 
 //Shell function for clear method
@@ -18,7 +19,7 @@ function clr(){
 //Clears the current equation
 function clear() {
   currentEquation = []
-  currentEntry.innerHTML = ""
+  currentEntry.value = ""
   console.log("Cleared")
 }
 
@@ -26,7 +27,7 @@ function clear() {
 function pop() {
   currentEquation = currentEquation.substring(0, currentEquation.length - 1)
   console.log("Popped")
-  currentEntry.innerHTML = currentEquation
+  currentEntry.value = currentEquation
 }
 
 //Used to load the previous 10 equations on screen from most recent to oldest
@@ -40,6 +41,7 @@ function loadPreviousEntries() {
 
 //Used the stored information in currentEquation to calculate the sum or product
 function calculate(){
+  currentEquation = currentEntry.value
   try {
     var sum = eval(currentEquation)
   } catch (e) {
@@ -51,13 +53,14 @@ function calculate(){
     currentEquation  = currentEquation + "=" + sum
     previousEquations.push(currentEquation)
     loadPreviousEntries()
-    clear()
   }
-  return sum
-}
-
-//TODO: remove when complete
-//Extra function for testing
-window.onload = function() {
-  console.log(eval(8^2))
+  var req = {
+      method: 'POST',
+      url: '/',
+      headers : {
+          'Content-Type' : 'application/json'
+      },
+      data: JSON.stringify({previousEquations: previousEquations})
+  };
+  console.log(req)
 }
